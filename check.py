@@ -159,17 +159,22 @@ def check_489ban(name, code, dates):
 def ys_rooms(yid):
     """yado-sagashi 計劃一覽：每個 plan/房 嘅 p 值同房名；冇 plan 就俾空 dict。"""
     h = fetch(f"{YS_BASE}index2.jsp?beg&all&yid={yid}")
-    rooms = {}
-    for mt in re.finditer(r"open2\('(\d+)',(\d+),'[^']*','(\d+)'", h):
+    rooms, unknown = {}, set()
+    plans = list(re.finditer(r"open2\('(\d+)',(\d+),'[^']*','(\d+)'", h))
+    for mt in plans:
         p = int(mt.group(2))
         text = re.sub(r"<[^>]+>", "|", h[max(0, mt.start() - 1500):mt.start()])
         found = re.findall(r"([^|()（）]+?)\s*[(（](\d+)名～(\d+)名[)）]", text)
         if not found:
+            unknown.add(p)
             continue
         room, lo, hi = found[-1]
+        unknown.discard(p)
         if int(lo) <= ADULTS <= int(hi):
             rooms[p] = re.sub(r"\s+", " ", room).strip()
-    if not rooms and "見つかりませんでした" not in h and "open2('" in h:
+    for p in unknown - rooms.keys():  # 冇寫人數：照查，月曆用 pe=2 會話俾我哋知訂唔訂到
+        rooms[p] = f"plan {p}"
+    if not plans and "見つかりませんでした" not in h and "open2('" in h:
         raise RuntimeError("plan list changed: rooms not parsed")
     return rooms
 
