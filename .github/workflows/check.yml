@@ -1,8 +1,6 @@
 name: ginzan-check
 
 on:
-  schedule:
-    - cron: "7,37 * * * *"  # 每 30 分鐘（第 7 同 37 分鐘）
   workflow_dispatch:
     inputs:
       test_dates:
