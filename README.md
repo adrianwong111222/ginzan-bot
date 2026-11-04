@@ -1,7 +1,8 @@
 # 銀山溫泉空房 bot
 
 每 30 分鐘查 13 間旅館官網（2 大人、1 晚、入住 2027/1/14–1/18）。
-n由 cron-job.org 每 30 分鐘 call GitHub API 觸發（GitHub 自己嘅 schedule 唔準時，已經拎走）。token 2027/1/31 到期。
+
+由 cron-job.org 每 30 分鐘 call GitHub API 觸發（GitHub 自己嘅 schedule 唔準時，已經拎走）。token 2027/1/31 到期。
 
 - 有新空房：即刻 send Telegram。
 - 每日香港時間朝早 9 點後：send 一次「仲喺度行緊」。
