@@ -319,7 +319,7 @@ def heartbeat_text(slots, errors, dates):
     span = f"{fmt_date(dates[0].isoformat())}–{fmt_date(dates[-1].isoformat())}" if dates else "-"
     lines = [
         "銀山溫泉 bot 仲喺度行緊。",
-        f"每個鐘查 {HOTEL_COUNT} 間（協會網 + 官網），入住 {span}，{ADULTS} 大人 1 晚。",
+        f"每 30 分鐘查 {HOTEL_COUNT} 間（協會網 + 官網），入住 {span}，{ADULTS} 大人 1 晚。",
         f"而家有房：{len(slots)} 個" + ("（之前已經 send 過）" if slots else ""),
     ]
     if errors:
