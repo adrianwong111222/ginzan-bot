@@ -1,4 +1,4 @@
-"""銀山溫泉空房檢查：13 間旅館，2 大人 1 晚，入住 2027-01-14 至 2027-01-18。
+"""銀山溫泉空房檢查：14 間旅館（13 間銀山 + 越後湯沢松泉閣花月），2 大人 1 晚，入住 2027-01-14 至 2027-01-18。
 
 每間旅館查兩個地方（如果有）：
   協會網：銀山温泉観光協会嘅聯合訂房 nj-yoyaku.net
@@ -54,6 +54,7 @@ BAN489_HOTELS = [  # reserve.489ban.net
     ("滝と蕎麦の宿 瀧見館", "takimikan"),
     ("能登屋旅館", "notoyaryokan"),
     ("御宿 やなだ屋", "yanadaya"),
+    ("松泉閣 花月（越後湯沢）", "kagetu"),  # 唔係銀山溫泉，但同樣用 489ban
 ]
 YS_BASE = "https://www.yado-sagashi.net/yoyaku/plan/"
 YS_HOTELS = [  # yado-sagashi.net：(名, yid)；古山閣嘅新館 plan 當蔵の場
@@ -65,7 +66,7 @@ TABICHAT_FUJIYA = ("藤屋", "fujiyaginzan")
 LIBERTY_SHOWAKAN = ("味とまごころの宿 昭和館", "cc5f559e549f4f2fac443b9673014a37",
                     "facility-db690034-b45f-46b5-84d1-3f8ba4b8f522")
 # 旅館 松本 官網用 rwiths.net，連唔到，所以淨係查協會網
-HOTEL_COUNT = 13
+HOTEL_COUNT = 14
 
 WEEKDAY = "一二三四五六日"
 OPEN_MARKS = {"○", "◎", "△"}

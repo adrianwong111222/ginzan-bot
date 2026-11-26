@@ -1,6 +1,6 @@
 # 銀山溫泉空房 bot
 
-每 15 分鐘查 13 間旅館官網（2 大人、1 晚、入住 2027/1/14–1/18）。
+每 15 分鐘查 14 間旅館官網（13 間銀山溫泉 + 越後湯沢 松泉閣花月）（2 大人、1 晚、入住 2027/1/14–1/18）。
 
 由 cron-job.org 每 15 分鐘 call GitHub API 觸發（GitHub 自己嘅 schedule 唔準時，已經拎走）。token 2027/1/31 到期。
 
@@ -23,6 +23,7 @@
 | 昭和館 | 有 | liberty-service.com |
 | 永澤平八 | 有 | hpdsp.net（Jalan 官網系統） |
 | 藤屋 | 有 | tabichat.jp |
+| 松泉閣 花月（越後湯沢） | 冇 | 489ban.net |
 | 松本 | 有 | rwiths.net — **冇查**（連唔到） |
 
 旅館 list 來自 https://www.ginzanonsen.jp/yado/
